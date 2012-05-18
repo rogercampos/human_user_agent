@@ -14,4 +14,6 @@ Gem::Specification.new do |gem|
   gem.name          = "human_user_agent"
   gem.require_paths = ["lib"]
   gem.version       = HumanUserAgent::VERSION
+
+  gem.add_dependency 'useragent', '>= 0.4.5'
 end
