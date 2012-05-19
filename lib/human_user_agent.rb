@@ -1,5 +1,3 @@
-require "human_user_agent/version"
-
 module HumanUserAgent
   extend self
 

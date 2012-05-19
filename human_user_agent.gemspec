@@ -4,9 +4,9 @@ require File.expand_path('../lib/human_user_agent/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["Roger Campos"]
   gem.email         = ["roger@itnig.net"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.description   = %q{Get human readable user agent values from the raw value}
+  gem.summary       = %q{Get human readable user agent values from the raw value}
+  gem.homepage      = "https://github.com/rogercampos/human_user_agent"
 
   gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   gem.files         = `git ls-files`.split("\n")
@@ -16,4 +16,5 @@ Gem::Specification.new do |gem|
   gem.version       = HumanUserAgent::VERSION
 
   gem.add_dependency 'useragent', '>= 0.4.5'
+  gem.add_development_dependency 'minitest'
 end
