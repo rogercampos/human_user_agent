@@ -1,3 +1,5 @@
+require 'useragent'
+
 module HumanUserAgent
   extend self
 
