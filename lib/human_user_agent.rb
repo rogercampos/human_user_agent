@@ -11,7 +11,8 @@ module HumanUserAgent
       "IE #{$1}"
     else
       uas = UserAgent.parse(raw_user_agent)
-      if uas[-2].product =~ /Chrome/
+
+      if uas[-2] && uas[-2].product =~ /Chrome/
         "Chrome"
       else
         ua = uas[-1]

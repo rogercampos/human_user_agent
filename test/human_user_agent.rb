@@ -41,5 +41,20 @@ class TestHumanUserAgent < MiniTest::Unit::TestCase
     raw_user_agent = "Mozilla/5.0 (Windows; U; Windows NT 5.1; es-ES; rv:1.9.1.2) Gecko/20090729 Firefox/3.5.2"
     assert_equal "Firefox 3.5", HumanUserAgent.parse(raw_user_agent)
   end
+
+  def test_to_s_conversion
+    klass = Class.new do
+      def to_s
+        "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; Trident/4.0; GTB7.3; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; OfficeLiveConnector.1.5; OfficeLivePatch.1.3; .NET4.0C; BRI/2)"
+      end
+    end
+
+    assert_equal "IE 7.0", HumanUserAgent.parse(klass.new)
+  end
+
+  def test_nil_or_blank_input
+    assert_equal nil, HumanUserAgent.parse(nil)
+    assert_equal nil, HumanUserAgent.parse("")
+  end
 end
 
